@@ -1,1 +1,3 @@
-Ce fichier est la base du projet.
+Ce fichier est la base des bases du projet.
+
+La modif de Nico !!!
