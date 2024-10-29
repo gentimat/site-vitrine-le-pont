@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire PHP</title>
+</head>
+<body>
+    <h1>Formulaire de Contact</h1>
+
+    <?php
+    // Initialisation des variables
+    $prenom = $nom = $email = $telephone = $message = "";
+    $message_envoye = "";
+
+    // Traitement du formulaire
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $prenom = htmlspecialchars($_POST['prenom']);
+        $nom = htmlspecialchars($_POST['nom']);
+        $email = htmlspecialchars($_POST['email']);
+        $telephone = htmlspecialchars($_POST['telephone']);
+        $message = htmlspecialchars($_POST['message']);
+
+        // Ici, vous pouvez ajouter la logique pour envoyer l'email ou enregistrer les données
+        $message_envoye = "Merci $prenom $nom, votre message a été envoyé !";
+    }
+    ?>
+
+    <form action="" method="post">
+        <label for="prenom">Prénom :</label><br>
+        <input type="text" id="prenom" name="prenom" required><br><br>
+
+        <label for="nom">Nom :</label><br>
+        <input type="text" id="nom" name="nom" required><br><br>
+
+        <label for="email">Email :</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="telephone">Téléphone :</label><br>
+        <input type="tel" id="telephone" name="telephone" required><br><br>
+
+        <label for="message">Message :</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+        <input type="submit" value="Envoyer">
+    </form>
+
+    <?php
+    // Affichage du message de confirmation
+    if ($message_envoye) {
+        echo "<p>$message_envoye</p>";
+    }
+    ?>
+</body>
+</html>
