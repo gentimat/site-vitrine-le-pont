@@ -1,0 +1,18 @@
+/* Styles pour le header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.logo {
+    width: 100px; /* Ajustez la taille selon vos besoins */
+}
+
+.header-image {
+    width: 100%; /* Prend toute la largeur disponible */
+    max-height: 200px; /* Ajustez la hauteur selon vos besoins */
+    object-fit: cover; /* Maintient le ratio de l'image */
+}
