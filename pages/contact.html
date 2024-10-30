@@ -2,29 +2,31 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire PHP</title>
+    <title>Contact</title>
+    <link rel="stylesheet" href="../src/style.css"> <!-- Assurez-vous d'inclure vos fichiers CSS -->
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <img src="chemin/vers/image.jpg" alt="Image d'en-tête">
+        <img src="chemin/vers/logo.png" alt="Logo" class="logo">
+    </header>
+
+    <!-- Barre de Menu -->
+    <nav class="menu-bar">
+        <ul>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../pages/produits.html">Produit</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+            <li><a href="../pages/mentions.html">Mentions Légales</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Contenu formulaire -->
     <h1>Formulaire de Contact</h1>
 
-    <?php
-    // Initialisation des variables
-    $prenom = $nom = $email = $telephone = $message = "";
-    $message_envoye = "";
-
-    // Traitement du formulaire
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $prenom = htmlspecialchars($_POST['prenom']);
-        $nom = htmlspecialchars($_POST['nom']);
-        $email = htmlspecialchars($_POST['email']);
-        $telephone = htmlspecialchars($_POST['telephone']);
-        $message = htmlspecialchars($_POST['message']);
-
-        // Ici, vous pouvez ajouter la logique pour envoyer l'email ou enregistrer les données
-        $message_envoye = "Merci $prenom $nom, votre message a été envoyé !";
-    }
-    ?>
 
     <form action="" method="post">
         <label for="prenom">Prénom :</label><br>
@@ -45,11 +47,14 @@
         <input type="submit" value="Envoyer">
     </form>
 
-    <?php
-    // Affichage du message de confirmation
-    if ($message_envoye) {
-        echo "<p>$message_envoye</p>";
-    }
-    ?>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Mon Site Vitrine. Tous droits réservés.</p>
+            <ul class="footer-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../pages/produit.html">Produit</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+        </footer>
 </body>
 </html>
